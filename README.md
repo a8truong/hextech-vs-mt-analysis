@@ -7,7 +7,7 @@ The dataset used for this analysis was of League of Legends competitive matches 
 
 ### Data Cleaning
 
-Since we are not looking at individual performance, the first thing we did to clean our data was to only take in the rows where playername is null, so that our dataframe only has the summary rows for each match. Then, we only filtered out columns we did not need, so that we end up with only columns about the dragons killed and the types, the result of the match, and the league name. We also added a column that stated whether or not a match has at least one kill for hextech dragons, and another for mountain dragons. 
+Since we are not looking at individual performance, the first thing we did to clean our data was to take only the rows where playername is null, so that our dataframe just has the summary rows for each match (in the data set these contain the info on dragon kills for each team). Then, we filtered out columns we did not need, so that we end up with only columns about the number of dragons killed of each type, the result of the match. We also added a column that stated whether or not a team has at least one kill for hextech dragons, and another for mountain dragons. 
 
 | result   |   mountains |   hextechs | has_mountain   | has_hextech   |
 |:---------|------------:|-----------:|:---------------|:--------------|
@@ -41,7 +41,7 @@ To make things easier to read, our histogram here displays the relationship betw
 | False    |    0.280064 |    0.285997 | 0.288351 | 0.283454 |   0.272057 |   1.43777 |       3.03152 |       0.211449 |      0.200917 |
 | True     |    0.595478 |    0.579463 | 0.581159 | 0.581818 |   0.586889 |   3.03209 |       1.43783 |       0.360302 |      0.360946 |
 
-When we group by the result of the match and find the mean, we can see that wins have a higher average for all dragon type kills, and the average of opposite team dragon kills are lower. This shows that in general, getting dragon kills increases the likelihood of winning a match. 
+When we group by the result of the match and find the mean, we can see that wins have a higher average for all dragon type kills, and the average of opposite team dragon kills are lower. This shows that in general, teams that win tend to have more dragon kills.
 
 ## Assessment of Missingness
 
@@ -51,10 +51,10 @@ We do not believe that there is a column in our dataset that is NMAR. This is be
 
 ### Missingness Dependency
 
-When we did permutation testing to see if the missingess of hextech kills were dependent on the results column, we received a p-value of 1.0, meaning that it is extremely unlikely that the missingness of hextech kills are dependent on results. 
+When we did permutation testing to see if the missingess of hextech kills were dependent on the results column, we received a p-value of 1.0, meaning that it is extremely unlikely that the missingness of hextech kills are dependent on results. Making them not MAR in relation to results.
 
-When we did permutation testing to see if the missingness of hextech kills were depending on the results column, we received a p-value of 0.0, meaning that it is extremely likely that the missingness of hextech kills are dependent on the league. 
+When we did permutation testing to see if the missingness of hextech kills were depending on the results column, we received a p-value of 0.0, meaning that it is extremely likely that the missingness of hextech kills are dependent on the league. Making them MAR in relation to results.
 
 ## Hypothesis Testing
 
-Our null hypothesis was that having at least one hextech dragon kill or at least one mountain dragon kill equally increases the odds of winning. Our alternative hypothesis was that having at least one hextech dragon increases the odds of winning more than having at least one mountain dragon kill. Our test statistic was the difference of means of the results of matches that had at least one hextech dragon kill and matches that had at least one mountain dragon kill. This was a good choice for answering our question because we were effectively comparing the win ratios between dragon types. Our resulting p-value was 0.0383, which is below the .05 significance level. With this, we reject the null hypothesis that the influence of dragon kills are the same for both types, and conclude that hextech dragon kills are likely to increase the odds of winning more than mountain dragon kills.
+Our null hypothesis was that having at least one hextech dragon kill or at least one mountain dragon kill equally increases the odds of winning. Our alternative hypothesis was that having at least one hextech dragon increases the odds of winning more than having at least one mountain dragon kill. Our test statistic was the difference of means of the results of matches that had at least one hextech dragon kill and matches that had at least one mountain dragon kill. This was a good choice for answering our question because we were effectively comparing the win ratios between dragon types. We did a permutation test, shuffling the results colunm. Our resulting p-value was 0.0383, which is below the .05 significance level. With this, we reject the null hypothesis that the influence of dragon kills are the same for both types, and conclude that hextech dragon kills are likely to increase the odds of winning more than mountain dragon kills.
