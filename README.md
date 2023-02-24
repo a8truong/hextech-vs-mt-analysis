@@ -9,7 +9,7 @@ The dataset used for this analysis was of League of Legends competitive matches 
 
 Since we are not looking at individual performance, the first thing we did to clean our data was to only take in the rows where playername is null, so that our dataframe only has the summary rows for each match. Then, we only filtered out columns we did not need, so that we end up with only columns about the dragons killed and the types, the result of the match, and the league name. We also added a column that stated whether or not a match has at least one kill for hextech dragons, and another for mountain dragons. 
 
-```
+```py
 | result   |   mountains |   hextechs | has_mountain   | has_hextech   |
 |:---------|------------:|-----------:|:---------------|:--------------|
 | False    |           0 |          1 | False          | True          |
@@ -35,7 +35,7 @@ Our histogram here displays the relationship between the number of mountain drag
 
 ### Interesting Aggregates
 
-```
+```py
 '| result   |   infernals |   mountains |   clouds |   oceans |   hextechs |   dragons |   opp_dragons |   has_mountain |   has_hextech |
 |:---------|------------:|------------:|---------:|---------:|-----------:|----------:|--------------:|---------------:|--------------:|
 | False    |    0.280064 |    0.285997 | 0.288351 | 0.283454 |   0.272057 |   1.43777 |       3.03152 |       0.211449 |      0.200917 |
