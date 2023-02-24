@@ -31,6 +31,9 @@ Our histogram here displays the relationship between the number of hextech drago
 <iframe src="assets/win_by_num_of_mountain_plot.html" width=800 height=600 frameBorder=0></iframe>
 Our histogram here displays the relationship between the number of mountain dragon kills and the win-loss ratio for each kill count. As the number of kills goes up, we can see that there are more wins than losses, similar to hextech dragon kills. 
 
+<iframe src="assets/overlay.html.html" width=800 height=600 frameBorder=0></iframe>
+To make things easier to read, our histogram here displays the relationship between winrate and number of each type of dragon, overlayed so they can be compared directly. For higher amounts of dragons, hextech has a higher winrate than ocean, especially when all 4 dragons are hextech, this is likely due to the dragon soul system in league that gives a special buff based on the fourth dragon killed by a team, so if all 4 of a dragons are one type, the soul will also be of that type.
+
 ### Interesting Aggregates
 
 | result   |   infernals |   mountains |   clouds |   oceans |   hextechs |   dragons |   opp_dragons |   has_mountain |   has_hextech |
