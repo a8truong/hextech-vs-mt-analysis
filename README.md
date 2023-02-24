@@ -9,7 +9,6 @@ The dataset used for this analysis was of League of Legends competitive matches 
 
 Since we are not looking at individual performance, the first thing we did to clean our data was to only take in the rows where playername is null, so that our dataframe only has the summary rows for each match. Then, we only filtered out columns we did not need, so that we end up with only columns about the dragons killed and the types, the result of the match, and the league name. We also added a column that stated whether or not a match has at least one kill for hextech dragons, and another for mountain dragons. 
 
-```py
 | result   |   mountains |   hextechs | has_mountain   | has_hextech   |
 |:---------|------------:|-----------:|:---------------|:--------------|
 | False    |           0 |          1 | False          | True          |
@@ -17,7 +16,6 @@ Since we are not looking at individual performance, the first thing we did to cl
 | False    |           1 |          0 | True           | False         |
 | True     |           2 |          1 | True           | True          |
 | True     |         nan |        nan | False          | False         |
-```
 
 ### Univariate Analysis
 <iframe src="assets/total_num_of_hex_plot.html" width=800 height=600 frameBorder=0></iframe>
@@ -35,12 +33,10 @@ Our histogram here displays the relationship between the number of mountain drag
 
 ### Interesting Aggregates
 
-```py
 '| result   |   infernals |   mountains |   clouds |   oceans |   hextechs |   dragons |   opp_dragons |   has_mountain |   has_hextech |
 |:---------|------------:|------------:|---------:|---------:|-----------:|----------:|--------------:|---------------:|--------------:|
 | False    |    0.280064 |    0.285997 | 0.288351 | 0.283454 |   0.272057 |   1.43777 |       3.03152 |       0.211449 |      0.200917 |
 | True     |    0.595478 |    0.579463 | 0.581159 | 0.581818 |   0.586889 |   3.03209 |       1.43783 |       0.360302 |      0.360946 |'
-```
 
 When we group by the result of the match and find the mean, we can see that wins have a higher average for all dragon type kills, and the average of opposite team dragon kills are lower. This shows that in general, getting dragon kills increases the likelihood of winning a match. 
 
