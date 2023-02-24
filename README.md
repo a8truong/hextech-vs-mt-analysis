@@ -33,10 +33,10 @@ Our histogram here displays the relationship between the number of mountain drag
 
 ### Interesting Aggregates
 
-'| result   |   infernals |   mountains |   clouds |   oceans |   hextechs |   dragons |   opp_dragons |   has_mountain |   has_hextech |
+| result   |   infernals |   mountains |   clouds |   oceans |   hextechs |   dragons |   opp_dragons |   has_mountain |   has_hextech |
 |:---------|------------:|------------:|---------:|---------:|-----------:|----------:|--------------:|---------------:|--------------:|
 | False    |    0.280064 |    0.285997 | 0.288351 | 0.283454 |   0.272057 |   1.43777 |       3.03152 |       0.211449 |      0.200917 |
-| True     |    0.595478 |    0.579463 | 0.581159 | 0.581818 |   0.586889 |   3.03209 |       1.43783 |       0.360302 |      0.360946 |'
+| True     |    0.595478 |    0.579463 | 0.581159 | 0.581818 |   0.586889 |   3.03209 |       1.43783 |       0.360302 |      0.360946 |
 
 When we group by the result of the match and find the mean, we can see that wins have a higher average for all dragon type kills, and the average of opposite team dragon kills are lower. This shows that in general, getting dragon kills increases the likelihood of winning a match. 
 
